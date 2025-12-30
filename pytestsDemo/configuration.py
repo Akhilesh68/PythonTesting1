@@ -23,25 +23,26 @@ print("Available sections:", config.sections())
 url = config.get("basic info", "url")
 print("url:", url)
 browser = config.get("basic info","browser")
-print(browser)
+print(f"Browser is: {browser}")
 
-username = config.get("locator login","username")
-pwd = config.get("locator login","pwd")
+username = config.get("login cred","username")
+pwd = config.get("login cred","pwd")
 print(username)
 print(pwd)
 
+# Open browser and facebook website
 driver =  webdriver.Chrome()
 driver.get(url)
 driver.maximize_window()
 sleep(3)
-driver.find_element(By.XPATH,username).send_keys("akhileshpatel597@gmail.com")
+driver.find_element(By.XPATH,"//input[@name='email']").send_keys(username)
 sleep(3)
-driver.find_element(By.XPATH,pwd).send_keys("a@k551993")
+driver.find_element(By.XPATH,"//input[@name='pass']").send_keys(pwd)
 
 wait = WebDriverWait(driver,15)
 login_btn = wait.until(expected_conditions.element_to_be_clickable((By.ID,"loginbutton")))
 login_btn.click()
 
-sleep(5)
+
 
 
