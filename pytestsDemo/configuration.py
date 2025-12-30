@@ -20,9 +20,13 @@ config.read(config_path)
 
 print("Available sections:", config.sections())
 
+project = config.get("basic info", "project_name")
+env = config.get("basic info", "environment")
 url = config.get("basic info", "url")
-print("url:", url)
 browser = config.get("basic info","browser")
+print(f"project name is: {project}")
+print(f"Testing environment is: {env}")
+print("url:", url)
 print(f"Browser is: {browser}")
 
 username = config.get("login cred","username")
