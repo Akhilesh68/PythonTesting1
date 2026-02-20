@@ -1,25 +1,25 @@
-# from time import sleep
-#
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.select import Select
-#
-# driver=webdriver.Chrome()
-# driver.maximize_window()
-# driver.get("https://www.globalsqa.com/demo-site/select-dropdown-menu/#google_vignette")
-#
-#
-# # driver.navigate().refresh()
-# # driver.refresh()
-# drp = Select(driver.find_element(By.XPATH,'//select'))
-# # drp.select_by_index(1)
-# drp.select_by_value('ASM  ')
-# # drp.select_by_visible_text('Male')
-# sleep(3)
-#
+from time import sleep
+from selenium import webdriver
+from threading import Thread
 
-def func(n1,n2):
-    return n1 + n2
 
-print(func(4,5))
-print(func(4,'A'))
+
+
+def test_testone():
+    x = 10 + 10
+    assert x == 20
+    driver = webdriver.Chrome()
+    driver.get("https://www.google.com/")
+    driver.maximize_window()
+    print("Hello Python")
+    driver.close()
+
+
+def test_testtwo():
+    y = 5 + 5
+    assert y == 10
+    driver = webdriver.Chrome()
+    driver.get("https://www.facebook.com/login/")
+    driver.maximize_window()
+    print("Hello Facebook")
+    driver.close()

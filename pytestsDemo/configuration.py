@@ -14,7 +14,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 config_path = os.path.join(PROJECT_ROOT, "config.ini")
 
 print("Config file path:", config_path)
-print("File exists:", os.path.exists(config_path))
+print("File exists:", os.path.exists(config_path))  
 
 config.read(config_path)
 
